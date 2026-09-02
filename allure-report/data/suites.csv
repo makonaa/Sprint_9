@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","693","Тест - проверяем, что регистрация юзера проходит успешно","tests","2026-09-01","passed","2026-09-01","TestSignUpPage","test_sign_up_page","",""
+"","3445","Тест - проверяем, что карточка рецепта создается с правильным названием","tests","2026-09-01","passed","2026-09-01","TestRecipesCreatePage","test_recipes_create_page","",""
+"","1175","Тест - проверяем, что логин успешно проходит для зарегистрированного юзера","tests","2026-09-01","passed","2026-09-01","TestSignUpPage","test_sign_in_page","",""

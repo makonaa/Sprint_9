@@ -1,5 +1,7 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+import os
 import Urls
 from pages.recipes_create_page import RecipesCreatePage
 from pages.recipes_page import RecipesPage
@@ -13,7 +15,14 @@ from generators.user_generation import UserSignUp
 def driver():
     options = webdriver.ChromeOptions()
     options.headless = True
-    driver = webdriver.Chrome(options=options)
+    options.add_argument("--headless=new")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+
+    driver = webdriver.Remote(
+        command_executor="http://selenoid:4444/wd/hub",
+        options=options
+    )
     driver.get(Urls.BASE_URL)
     yield driver
     driver.quit()
