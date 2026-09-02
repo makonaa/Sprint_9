@@ -24,6 +24,8 @@ services:
 
   autotests:
     build: .
+    environment:
+      - USE_SELENOID=true
     container_name: autotests
     working_dir: /app
     volumes:

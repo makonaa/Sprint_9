@@ -19,10 +19,16 @@ def driver():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    driver = webdriver.Remote(
-        command_executor="http://selenoid:4444/wd/hub",
-        options=options
-    )
+    use_selenoid = os.getenv("USE_SELENOID", "false").lower() == "true"
+
+    if use_selenoid:
+        driver = webdriver.Remote(
+            command_executor="http://selenoid:4444/wd/hub",
+            options=options
+        )
+    else:
+        driver = webdriver.Chrome(options=options)
+
     driver.get(Urls.BASE_URL)
     yield driver
     driver.quit()
