@@ -1,3 +1,5 @@
 .*
 allure-results
+__pycache__
+selenoid/Dockerfile
 !.git*
