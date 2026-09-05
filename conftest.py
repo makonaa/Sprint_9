@@ -1,6 +1,5 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 import os
 import Urls
 from pages.recipes_create_page import RecipesCreatePage
